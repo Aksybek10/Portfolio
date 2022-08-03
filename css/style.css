@@ -5,123 +5,75 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  /* font-family: 'Mouse Memoirs'; */
 }
 body a{
   text-decoration: none;
-}
-
-/* MAIN */
-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 10vh;
-  border-bottom: 1px solid rgb(109, 106, 106);
-}
-.logo{
-  display: flex;
-}
-.logo img{
-  height: 50px;
-}
-.logo h1{
-  font-family: 'Mouse Memoirs';
-  font-size: 42px;
-  margin-left: 5%;
-}
-nav{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-  height: 100%;
-}
-nav a{
-  font-size: 18px;
-  line-height: 22px;
   color: #828282;
 }
-nav a:hover{
-  border-bottom: 3px solid rgb(42, 44, 143);
-  color: #000;
-}
-.burger img{
-  height: 30px;
-  cursor: pointer;
-}
-/* MAIN MAIN */
-main .col>div{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5vh;
-}
-main .col h1{
-  font-size: 50px;
-}
-main .col h3{
-  font-size: 22px;
-}
-main .col>div p{
-  transform: rotate(270deg);
-  cursor: pointer;
-}
-.mainImg img{
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  border: 1px solid #000;
-}
 
-/* ABOUT */
-.about{
-  margin-top: 15vh;
-  background: #f6f6f6;
-  text-align: center;
+/* HEADER */
+header{
+  height: 10vh;
 }
-.about div{
-  margin: 5vh auto;
-  max-width: 500px;
-  padding: 20px 0;
+header .container .row{
+  height: 10vh;
+  border-bottom: 1px solid #000;
 }
-.about div p{
-  margin-top: 30px;
+header a{
   font-size: 18px;
   line-height: 22px;
-  color: #070707;
+}
+header a:hover{
+  color: #000;
+  font-weight: 700;
+}
+/* MAIN */
+main img{
+  width: 100%;
+  border: 1px solid #000;
+}
+main p{
+  transform: rotate(-90deg);
+}
+
+/* ABOUT ME */
+.about{
+  background-color: #f6f6f6;
+  margin: 10vh 0;
+  padding: 10vh 0;
 }
 
 /* SKILLS */
 .skills{
-  text-align: center;
+  padding-bottom: 10vh;
 }
-.skills .container{
-  margin: 10vh auto;
+.skills .container>.row{
+  height: 40vh;
+  align-content: space-between;
 }
-.skills .container p{
-  margin: 5vh 0;
-}
-.item{
-  height: 120px;
-}
-.skill{
-  display: flex;
-  justify-content: space-between;
-}
-.skill .col:not(:last-child){
-  margin-right: 20px;
-}
-.skill h2{
-  font-size: 14px;
-  line-height: 17px;
-  color: #828282;
-  margin: 2vh 0;
+.icon{
+  height: 100px;
 }
 
-/* FOOTER */
-footer .container{
-  text-align: center;
-  margin: 10vh auto;
+/* PORTFOLIO */
+.portfolio{
+  background-color: #f6f6f6;
+  margin: 10vh 0;
+  padding: 10vh 0;
+}
+.portfolio iframe{
+  height: 70vh;
+}
+
+/* CONTAACTS */
+.btn{
+  padding: 20px 15px;
+  background-color: rgb(22, 21, 21);
+  color: #fff;
+}
+.btn:hover{
+  background-color: #000;
 }
 .social{
   margin: 5vh 0;
@@ -132,7 +84,7 @@ ul{
   justify-content: center;
   gap: 40px;
 }
-ul li{
+ul li {
   position: relative;
   list-style: none;
   width: 120px;
@@ -156,6 +108,7 @@ ul li::before{
   width: 100%;
   height: 0;
   overflow: hidden;
+  text-align: center;
   border-bottom: 4px solid var(--clr);
   transition: 0.5s ease-in-out;
   line-height: 120px;
@@ -163,7 +116,18 @@ ul li::before{
   font-size: 5em;
   color: var(--clr);
 }
+ul li a::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+}
 ul li:hover::before{
+  height: 100%;
+}
+ul li a:hover::before{
   height: 100%;
 }
 ul li:nth-child(1):before{
@@ -177,104 +141,4 @@ ul li:nth-child(3):before{
 }
 ul li:nth-child(4):before{
   content: '\f232';
-}
-
-/* PORTFOLIO */
-.portfolio {
-  width: 100%;
-}
-.web{
-  display: flex;
-  width: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 768px){
-  nav{
-    display: none;
-  }
-  /* MAIN */
-  main .col>div{
-    flex-direction: column;
-    text-align: center;
-    position: relative;
-  }
-  main .col>div p{
-    position: absolute;
-    margin-left: 5px;
-    top: 60px;
-    right: 5px;
-  }
-  main .col h1{
-    font-size: 42px;
-  }
-  main .col h3{
-    font-size: 18px;
-  }
-
-  /* ABOUT */
-  .about div{
-    max-width: 370px;
-  }
-  .about div p{
-    font-size: 16px;
-  }
-
-  /* SKILLS */
-  .item{
-    height: 150px;
-  }
-  .skill{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .skill .col>div{
-    width: 100%;
-    margin-bottom: 5vh;
-  }
-  .skill .col:not(:last-child){
-    margin-right: 0;
-  }
-  .skill h2{
-    font-size: 18px;
-    margin: 3vh 0;
-  }
-
-  /* footer */
-  ul{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  ul li{
-    width: 80px;
-    height: 80px;
-  }
-  ul li .fa{
-    font-size: 4em;
-  }
-  ul li::before{
-    line-height: 80px;
-    font-size: 4em;
-  }
-  
-}
-@media (min-width: 767px){
-  .burger{  
-    display: none;
-  }
 }
